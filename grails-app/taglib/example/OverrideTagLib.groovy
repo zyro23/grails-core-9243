@@ -1,15 +1,11 @@
 package example
 
-import org.grails.plugins.web.taglib.FormTagLib
-import org.springframework.beans.factory.annotation.Autowired
-
 class OverrideTagLib {
 
-	@Autowired
-	FormTagLib formTagLib
+	static namespace = 'my'
 	
 	def form = { attrs, body ->
-		out << formTagLib.form(attrs, body)
+		out << g.form(attrs, body)
 	}
-	
+
 }
